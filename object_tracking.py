@@ -51,6 +51,10 @@ def main():
         # Capture frame-by-frame
         ret, frame = cap.read()
 
+        if frame is None:
+            print 'WARNING: No data input.'
+            break
+
         # Make copy of original frame
         orig_frame = copy.copy(frame)
 
@@ -115,3 +119,5 @@ def main():
 if __name__ == "__main__":
     # execute main
     main()
+
+    print '----  The find end.'
